@@ -6,9 +6,9 @@ A regex, also known as a regular expression, is a sequence of characters used to
 
 In this summary we will be discussing the matching an email regex: 
 
- /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
-This is used to validate and match email addresses. This regex ensures that an input string follows the format of an email address. It typically includes checks for the presence of a username, the "@" symbol, and a domain name. Sometimes this can be complex due to the various formats of email addresses.
+This is used to validate and match email addresses. This regex ensures that an input string follows the format of an email address. It typically includes checks for the presence of a username, the `@` symbol, and a domain name. Sometimes this can be complex due to the various formats of email addresses.
 
 ## Table of Contents
 
@@ -27,6 +27,11 @@ This is used to validate and match email addresses. This regex ensures that an i
 ## Regex Components
 
 ### Anchors
+The regex  `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` uses two anchors, but this is not always required. The anchors used in this regex are the `^` and `$`. These are the start and end anchors, respectfully.
+
+The start anchor asserts the match should start at the beginning of the string and the end anchor stops at the end of the string.
+
+Together these two anchors ensure the entirety of the input string is considered when matching the pattern of the email address.
 
 ### Quantifiers
 
