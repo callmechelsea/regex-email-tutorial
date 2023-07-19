@@ -1,10 +1,14 @@
-# Title (replace with your title)
+# Title Matching an Email Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+A regex, also known as a regular expression, is a sequence of characters used to define a search pattern. It is a tool for pattern matching and manipulation in strings, allowing you to search, match and replace text based on patterns. Regex is commonly used in programming to perform tasks like validation, searching, and extraction.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+In this summary we will be discussing the matching an email regex: 
+
+ /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+This is used to validate and match email addresses. This regex ensures that an input string follows the format of an email address. It typically includes checks for the presence of a username, the "@" symbol, and a domain name. Sometimes this can be complex due to the various formats of email addresses.
 
 ## Table of Contents
 
