@@ -34,10 +34,27 @@ The start anchor asserts the match should start at the beginning of the string a
 Together these two anchors ensure the entirety of the input string is considered when matching the pattern of the email address.
 
 ### Quantifiers
+The regular expression `^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$` uses the following quantifiers:
+
+`+` (plus): It is used after the character class `[a-z0-9_\.-]` and `[\da-z\.-]`. The `+` quantifier matches one or more occurrences of the preceding character or character class. It allows matching one or more alphanumeric characters, underscores, dots, or hyphens in the username and domain parts of the email address.
+
+`{2,6}`: It is used after the character class `[a-z\.]`. The `{2,6}` quantifier specifies a range of minimum and maximum occurrences. It matches a sequence of lowercase letters or dots with a minimum of 2 occurrences and a maximum of 6 occurrences. This part is used to match the top-level domain (TLD) of the email address.
+
+To summarize, the `+` quantifier allows one or more occurrences, while the `{2,6}` quantifier specifies a range of occurrences for matching specific patterns within the regex.
 
 ### OR Operator
+Does not contain and OR operator.
 
 ### Character Classes
+Character classes in a regular expression define a set of characters that can be matched. They're enclosed in square brackets `[]`. In the regular expression you provided, `^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$`, we see several character classes and meta sequences:
+
+`[a-z0-9_\.-]` - This character class matches any lowercase letter `a-z`, any digit `0-9`, underscore `_`, dot `.`, or dash `-`.
+
+`\d` - This is a shorthand character class that matches any digit equivalent to `[0-9]`.
+
+`[a-z\.-]` - This character class matches any lowercase letter `a-z`, dot `.`, or dash `-`.
+
+`[a-z\.]` - This character class matches any lowercase letter `a-z` or dot `.`.
 
 ### Flags
 
