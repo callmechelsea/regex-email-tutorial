@@ -41,10 +41,6 @@ The regular expression `^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$` uses th
 `{2,6}`: It is used after the character class `[a-z\.]`. The `{2,6}` quantifier specifies a range of minimum and maximum occurrences. It matches a sequence of lowercase letters or dots with a minimum of 2 occurrences and a maximum of 6 occurrences. This part is used to match the top-level domain (TLD) of the email address.
 
 To summarize, the `+` quantifier allows one or more occurrences, while the `{2,6}` quantifier specifies a range of occurrences for matching specific patterns within the regex.
-
-### OR Operator
-Does not contain and OR operator.
-
 ### Character Classes
 Character classes in a regular expression define a set of characters that can be matched. They're enclosed in square brackets `[]`. In the regular expression you provided, `^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$`, we see several character classes and meta sequences:
 
@@ -54,22 +50,32 @@ Character classes in a regular expression define a set of characters that can be
 
 `[a-z\.-]` - This character class matches any lowercase letter `a-z`, dot `.`, or dash `-`.
 
-`[a-z\.]` - This character class matches any lowercase letter `a-z` or dot `.`.
-
-### Flags
-
+`[a-z\.]` - This character class matches any lowercase letter `a-z` or dot `.`
 ### Grouping and Capturing
+Grouping and capturing are important concepts in regular expressions that allow you to create logical groups within a pattern and capture specific parts of the matched text.
+
+`([a-z0-9_\.-]+)`: This captures one or more lowercase letters, numbers, underscores, periods, or hyphens that appear before the `@` symbol.
+
+`([\da-z\.-]+)`: This captures one or more digits, lowercase letters, periods, or hyphens that appear between the `@` symbol and the dot in the domain name.
+
+`([a-z\.]{2,6})`: This captures two to six lowercase letters or periods that represent the top-level domain.
+
+These groups allow you to extract the username, domain name, and TLD separately from an email address that matches the pattern.
 
 ### Bracket Expressions
+Bracket expressions are enclosed within square brackets `[]` and define a set of characters that can match a single character at that position in the string.
+
+
+`[a-z0-9_\.-]`: This character class matches any lowercase letter `a-z`, digit `0-9`, underscore `_`, period `.`, or hyphen `-`.
+`[\da-z\.-]`: This character class matches any digit `\d` or `0-9`, lowercase letter `a-z`, period `.`, or hyphen `-`.
+`[a-z\.]`: This character class matches any lowercase letter `a-z` or period `.`.
 
 ### Greedy and Lazy Match
-
-### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
+`+` matches one or more occurrences of the preceding pattern. In this case, `([a-z0-9_\.-]+)` and `([\da-z\.-]+)` use the `+` quantifier. This means that these groups will match as many characters as possible that satisfy the pattern, such as multiple lowercase letters, digits, underscores, periods, or hyphens.
+`{2,6}` matches between 2 and 6 occurrences of the preceding pattern. In this case, `([a-z\.]{2,6})` uses the `{2,6}` quantifier. This means that this group will match between 2 and 6 lowercase letters or periods, trying to match as many characters as possible within that range.
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Brought to you by Chelsea Pratte.
+
+https://github.com/callmechelsea/
